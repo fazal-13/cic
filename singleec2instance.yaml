@@ -22,6 +22,7 @@ Parameters:
   SubnetID:
     Description: ID of a Subnet.
     Type: AWS::EC2::Subnet::Id
+    Default: subnet-030b5bc2bf84dfff8
   SourceLocation:
     Description : The CIDR IP address range that can be used to RDP to the EC2 instances
     Type: String
@@ -33,6 +34,7 @@ Parameters:
   VPCID:
     Description: ID of the target VPC (e.g., vpc-0343606e).
     Type: AWS::EC2::VPC::Id
+    Default: vpc-009bfdd2629159c8e
 
 Resources:
 
@@ -85,7 +87,7 @@ Resources:
         Roles:
           - !Ref SSMInstanceRole
 
-  EC2Instance:
+ EC2Instance:
       Type: "AWS::EC2::Instance"
       Properties:
         ImageId: !Ref LatestAmiId
@@ -94,10 +96,9 @@ Resources:
         NetworkInterfaces:
           - DeleteOnTermination: true
             DeviceIndex: '0'
-            SubnetId: !Ref 'SubnetID'
+            SubnetId: !Ref 'Subnet'
             GroupSet:
               - !Ref EC2InstanceSG
         Tags:
           - Key: "Name"
             Value: "CFNWorkshop-EC2"
-single
