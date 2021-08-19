@@ -86,7 +86,6 @@ Resources:
       Properties:
         Roles:
           - !Ref SSMInstanceRole
-
  EC2Instance:
       Type: "AWS::EC2::Instance"
       Properties:
