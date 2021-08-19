@@ -96,9 +96,9 @@ Resources:
         NetworkInterfaces:
           - DeleteOnTermination: true
             DeviceIndex: '0'
-            SubnetId: !Ref 'Subnet'
+            SubnetId: !Ref 'SubnetID'
             GroupSet:
-              -  !Ref EC2InstanceSG
+              - !Ref EC2InstanceSG
         Tags:
           - Key: "Name"
             Value: "CFNWorkshop-EC2"
