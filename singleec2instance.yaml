@@ -86,7 +86,8 @@ Resources:
       Properties:
         Roles:
           - !Ref SSMInstanceRole
- EC2Instance:
+
+  EC2Instance:
       Type: "AWS::EC2::Instance"
       Properties:
         ImageId: !Ref LatestAmiId
