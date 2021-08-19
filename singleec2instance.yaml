@@ -98,7 +98,7 @@ Resources:
             DeviceIndex: '0'
             SubnetId: !Ref 'Subnet'
             GroupSet:
-              - !Ref EC2InstanceSG
+              -  !Ref EC2InstanceSG
         Tags:
           - Key: "Name"
             Value: "CFNWorkshop-EC2"
